@@ -22,9 +22,9 @@ const hackathonData = {
     rulebook: "https://docs.google.com/patentathon-rules",
     whatsapp: "https://chat.whatsapp.com/patentathon2025",
     email: "hello@patentathon2025.com",
-    phone: "+91-9876543210",
-    map: "https://maps.google.com/chandigarh-university",
-    website: "https://patentathon2025.com",
+    phone: "+91-9835483030",
+    map: "",
+    website: "https://patentathon-2025.vercel.app/",
     socials: {
       instagram: "https://instagram.com/patentathon2025",
       linkedin: "https://linkedin.com/company/patentathon",
