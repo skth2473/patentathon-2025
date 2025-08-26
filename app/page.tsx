@@ -64,7 +64,7 @@ const hackathonData = {
     { name: "Abhishek Kumar", role: "AD, CSE", org: "Chandigarh University" },
     { name: "Dr. Gurmeet Saini", role: "Faculty Co-Advisor", org: "Chandigarh University" },
   ],
-  communityPartners: ["Campus To Corporate Club"],
+  communityPartners: ["Campus To Corporate"],
   faqs: [
     {
       q: "Who can participate in Patent-a-thon 1.0?",
@@ -104,7 +104,7 @@ export default function PatentaThonLanding() {
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center text-primary-foreground font-bold text-lg">
-              {/* {hackathonData.brand.logoText} */}
+              <img src="LOGO.png" alt="Sci-fi" />
             </div>
             <div>
               <h1 className="text-xl font-bold text-foreground">{hackathonData.brand.name}</h1>
