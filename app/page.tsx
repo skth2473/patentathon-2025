@@ -8,23 +8,23 @@ const hackathonData = {
   brand: {
     name: "Patent-a-thon 1.0",
     tagline: "Ideate • Innovate • Patent",
-    logoText: "P1",
+    logo: "/LOGO.png",
   },
   meta: {
     date: "17 October 2025",
     time: "Full Day Event",
-    venue: "B1 Seminar Hall, Chandigarh University",
+    venue: "Chandigarh University", 
     city: "Chandigarh",
   },
   links: {
-    register: "https://patentathon2025.devfolio.co",
+    register: "",
     brochure: "https://drive.google.com/patentathon-brochure",
     rulebook: "https://docs.google.com/patentathon-rules",
     whatsapp: "https://chat.whatsapp.com/patentathon2025",
-    email: "hello@patentathon2025.com",
-    phone: "+91-9835483030",
-    map: "",
-    website: "https://patentathon-2025.vercel.app/",
+    email: "cumail.in",
+    phone: "+91-9876543210",
+    map: "https://maps.google.com/chandigarh-university",
+    website: "https://patentathon2025.com",
     socials: {
       instagram: "https://instagram.com/patentathon2025",
       linkedin: "https://linkedin.com/company/patentathon",
@@ -34,7 +34,7 @@ const hackathonData = {
   },
   numbers: [
     { label: "Participants", value: "500+" },
-    { label: "Colleges", value: "50+" },
+    { label: "Ideas", value: "∞" },
     { label: "Tracks", value: "9" },
     { label: "Innovation", value: "∞" },
   ],
@@ -64,7 +64,7 @@ const hackathonData = {
     { name: "Abhishek Kumar", role: "AD, CSE", org: "Chandigarh University" },
     { name: "Dr. Gurmeet Saini", role: "Faculty Co-Advisor", org: "Chandigarh University" },
   ],
-  communityPartners: ["Campus To Corporate"],
+  communityPartners: ["Campus to Corporate"],
   faqs: [
     {
       q: "Who can participate in Patent-a-thon 1.0?",
@@ -104,7 +104,7 @@ export default function PatentaThonLanding() {
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center text-primary-foreground font-bold text-lg">
-              <img src="LOGO.png" alt="Sci-fi" />
+              {hackathonData.brand.logo}
             </div>
             <div>
               <h1 className="text-xl font-bold text-foreground">{hackathonData.brand.name}</h1>
@@ -117,7 +117,12 @@ export default function PatentaThonLanding() {
                 Register Now
               </a>
             </Button>
-            <ThemeToggle />
+            <Button variant="outline" asChild>
+              <a href={hackathonData.links.whatsapp} target="_blank" rel="noopener noreferrer">
+                Join WhatsApp
+              </a>
+            </Button>
+            <ThemeToggle className="ml-1" />
           </div>
         </div>
       </header>
@@ -145,7 +150,14 @@ export default function PatentaThonLanding() {
               </div>
               <div className="flex items-center gap-2 text-foreground">
                 <MapPin className="w-5 h-5 text-primary" />
-                <span className="font-semibold">{hackathonData.meta.venue}</span>
+                <a
+                  href={hackathonData.links.map}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold hover:text-primary underline-offset-4 hover:underline"
+                >
+                  {hackathonData.meta.venue}
+                </a>
               </div>
             </div>
 
@@ -156,8 +168,8 @@ export default function PatentaThonLanding() {
                 </a>
               </Button>
               <Button size="lg" variant="outline" asChild>
-                <a href={hackathonData.links.brochure} target="_blank" rel="noopener noreferrer">
-                  Download Brochure
+                <a href={hackathonData.links.whatsapp} target="_blank" rel="noopener noreferrer">
+                  Join WhatsApp
                 </a>
               </Button>
             </div>
@@ -236,17 +248,33 @@ export default function PatentaThonLanding() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
-            {hackathonData.mentors.map((mentor, index) => (
-              <Card key={index} className="bg-card/80 backdrop-blur-sm">
-                <CardContent className="p-6 text-center">
-                  <div className="font-semibold text-foreground text-lg mb-2">{mentor.name}</div>
-                  <div className="text-sm text-primary font-medium mb-1">{mentor.role}</div>
-                  <div className="text-sm text-muted-foreground">{mentor.org}</div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+          {(() => {
+            const mentorPhotos: Record<string, string> = {
+              "Dr. Sachin Ahuja": "/Sachin Sir.jpeg",
+              "Dr. Ruchika Gupta": "/Ruchika M.jpeg",
+              "Dr. Puneet Kumar": "/Puneet SIr.jpeg",
+              "Abhishek Kumar": "/abhishek.jpeg",
+              "Dr. Gurmeet Saini": "/Gurmeet.jpeg",
+            }
+            return (
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
+                {hackathonData.mentors.map((mentor, index) => (
+                  <Card key={index} className="bg-card/80 backdrop-blur-sm">
+                    <CardContent className="p-6 text-center">
+                      <img
+                        src={mentorPhotos[mentor.name] || "/placeholder.svg?height=128&width=128&query=mentor portrait"}
+                        alt={`${mentor.name} portrait`}
+                        className="w-20 h-20 rounded-full mx-auto mb-4 object-cover"
+                      />
+                      <div className="font-semibold text-foreground text-lg mb-2">{mentor.name}</div>
+                      <div className="text-sm text-primary font-medium mb-1">{mentor.role}</div>
+                      <div className="text-sm text-muted-foreground">{mentor.org}</div>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            )
+          })()}
         </div>
       </section>
 
@@ -257,12 +285,17 @@ export default function PatentaThonLanding() {
             <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-4 text-balance">Community Partners</h3>
           </div>
 
-          <div className="flex flex-wrap justify-center gap-6">
-            {hackathonData.communityPartners.map((partner, index) => (
-              <Badge key={index} variant="outline" className="text-lg px-6 py-3 bg-card/50">
-                {partner}
-              </Badge>
-            ))}
+          <div className="flex flex-wrap justify-center items-center gap-10">
+            <img
+              src="/LOGO.png"
+              alt="Community partner logo 1"
+              className="h-10 w-auto opacity-90"
+            />
+            <img
+              src="/LOGO.png"
+              alt="Community partner logo 2"
+              className="h-10 w-auto opacity-90"
+            />
           </div>
         </div>
       </section>
