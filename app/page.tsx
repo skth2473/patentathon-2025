@@ -17,17 +17,17 @@ const hackathonData = {
     city: "Chandigarh",
   },
   links: {
-    register: "",
+    register: "https://docs.google.com/forms/d/1fIqW1_lN9XV0re2l6G4Bc79yFwbj9kM5YzNckMkMbzc/edit",
     brochure: "https://drive.google.com/patentathon-brochure",
     rulebook: "https://docs.google.com/patentathon-rules",
-    whatsapp: "https://chat.whatsapp.com/patentathon2025",
-    email: "cumail.in",
-    phone: "+91-9876543210",
-    map: "https://maps.google.com/chandigarh-university",
-    website: "https://patentathon2025.com",
+    whatsapp: "https://chat.whatsapp.com/CXnEqBAZlSIC3Msbv8017a?mode=ems_qr_c",
+    email: "scifiinnovationclub@gmail.com",
+    phone: "+91 98354 83030",
+    map: "https://maps.app.goo.gl/gN7rDhjEsALJ4TAz8",
+    website: "https://patentathon-2025.vercel.app/",
     socials: {
-      instagram: "https://instagram.com/patentathon2025",
-      linkedin: "https://linkedin.com/company/patentathon",
+      instagram: "https://www.instagram.com/scifiinnovationclub?igsh=NDVtamhnOXZsdGpk",
+      linkedin: "https://www.linkedin.com/company/sci-fi-innovation-club/?viewAsMember=true",
       twitter: "https://twitter.com/patentathon2025",
       youtube: "https://youtube.com/@patentathon2025",
     },
@@ -103,9 +103,7 @@ export default function PatentaThonLanding() {
       <header className="border-b bg-card/80 backdrop-blur-sm sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center text-primary-foreground font-bold text-lg">
-              {hackathonData.brand.logo}
-            </div>
+  
             <div>
               <h1 className="text-xl font-bold text-foreground">{hackathonData.brand.name}</h1>
               <p className="text-sm text-muted-foreground">{hackathonData.brand.tagline}</p>
@@ -122,7 +120,7 @@ export default function PatentaThonLanding() {
                 Join WhatsApp
               </a>
             </Button>
-            <ThemeToggle className="ml-1" />
+            <ThemeToggle />
           </div>
         </div>
       </header>
@@ -369,9 +367,6 @@ export default function PatentaThonLanding() {
         <div className="container mx-auto px-4 relative z-10">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center text-primary-foreground font-bold">
-                {hackathonData.brand.logoText}
-              </div>
               <span className="font-semibold text-foreground">{hackathonData.brand.name}</span>
             </div>
 
