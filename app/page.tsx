@@ -6,7 +6,7 @@ import { ThemeToggle } from "@/components/theme-toggle"
 
 const hackathonData = {
   brand: {
-    name: "Patent-a-thon 1.0",
+    name: "Patent-A-Thon 1.0",
     tagline: "Ideate • Innovate • Patent",
     logo: "/LOGO.png",
   },
@@ -28,7 +28,7 @@ const hackathonData = {
     socials: {
       instagram: "https://www.instagram.com/scifiinnovationclub?igsh=NDVtamhnOXZsdGpk",
       linkedin: "https://www.linkedin.com/company/sci-fi-innovation-club/?viewAsMember=true",
-      twitter: "https://twitter.com/patentathon2025",
+      twitter: "https://chat.whatsapp.com/CXnEqBAZlSIC3Msbv8017a?mode=ems_qr_c",
       youtube: "https://youtube.com/@patentathon2025",
     },
   },
@@ -39,7 +39,7 @@ const hackathonData = {
     { label: "Innovation", value: "∞" },
   ],
   tracks: [
-    { title: "HealthTech Innovation", desc: "Revolutionary healthcare solutions and medical device patents" },
+    { title: "HealthTech Innovation", desc: "Revolutionary healthcare solutions and medical device patents",},
     { title: "Sustainable Technology", desc: "Green tech innovations for environmental sustainability" },
     { title: "AI & Machine Learning", desc: "Cutting-edge AI algorithms and intelligent systems" },
     { title: "IoT & Smart Systems", desc: "Connected devices and smart infrastructure solutions" },
@@ -61,7 +61,7 @@ const hackathonData = {
     { name: "Dr. Sachin Ahuja", role: "ED Engineering", org: "Chandigarh University" },
     { name: "Dr. Ruchika Gupta", role: "AD UIE Research", org: "Chandigarh University" },
     { name: "Dr. Puneet Kumar", role: "AD CSE", org: "Chandigarh University" },
-    { name: "Abhishek Kumar", role: "AD, CSE", org: "Chandigarh University" },
+    
     { name: "Dr. Gurmeet Saini", role: "Faculty Co-Advisor", org: "Chandigarh University" },
   ],
   communityPartners: ["Campus to Corporate"],
@@ -120,7 +120,7 @@ export default function PatentaThonLanding() {
                 Join WhatsApp
               </a>
             </Button>
-            <ThemeToggle />
+        
           </div>
         </div>
       </header>
@@ -190,29 +190,43 @@ export default function PatentaThonLanding() {
       </section>
 
       {/* Tracks Section */}
-      <section className="py-20 relative">
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center mb-16">
-            <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-4 text-balance">Innovation Tracks</h3>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-pretty">
-              Choose your domain and build groundbreaking solutions that can be patented
-            </p>
-          </div>
+<section className="py-20 relative">
+  <div className="container mx-auto px-4 relative z-10">
+    <div className="text-center mb-16">
+      <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-4 text-balance">
+        Innovation Tracks
+      </h3>
+      <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-pretty">
+        Choose your domain and build groundbreaking solutions that can be patented
+      </p>
+    </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {hackathonData.tracks.map((track, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow bg-card/80 backdrop-blur-sm">
-                <CardHeader>
-                  <CardTitle className="text-lg text-balance">{track.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription className="text-sm text-pretty">{track.desc}</CardDescription>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {hackathonData.tracks.map((track, index) => (
+        <Card
+          key={index}
+          className="hover:shadow-lg transition-shadow bg-card/80 backdrop-blur-sm"
+        >
+          <CardHeader className="flex flex-col items-center">
+            {/* Track Image */}
+            <img
+              src={track.image}
+              alt={track.title}
+              className="w-20 h-20 object-contain mb-4"
+            />
+            <CardTitle className="text-lg text-balance">{track.title}</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <CardDescription className="text-sm text-pretty">
+              {track.desc}
+            </CardDescription>
+          </CardContent>
+        </Card>
+      ))}
+    </div>
+  </div>
+</section>
+
 
       {/* Timeline Section */}
       <section className="py-20 bg-muted/30 relative">
@@ -251,7 +265,6 @@ export default function PatentaThonLanding() {
               "Dr. Sachin Ahuja": "/Sachin Sir.jpeg",
               "Dr. Ruchika Gupta": "/Ruchika M.jpeg",
               "Dr. Puneet Kumar": "/Puneet SIr.jpeg",
-              "Abhishek Kumar": "/abhishek.jpeg",
               "Dr. Gurmeet Saini": "/Gurmeet.jpeg",
             }
             return (
@@ -393,7 +406,7 @@ export default function PatentaThonLanding() {
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-primary"
               >
-                Twitter
+                Whatsapp
               </a>
             </div>
           </div>
